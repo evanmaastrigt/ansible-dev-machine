@@ -7,4 +7,10 @@
   - php5-cli
   - php5-xdebug
   - php5-dev
+  
+- name: PHP | Install Composer
+  shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/
+  
+- name: PHP | Symlink Composer
+  file: path=/usr/local/bin/composer src=/usr/local/bin/composer.phar state=link
     
