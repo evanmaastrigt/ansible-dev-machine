@@ -12,4 +12,5 @@ netbeans_url: http://download.netbeans.org/netbeans/8.0/final/bundles/netbeans-8
 netbeans_installer_name: netbeans-8-0-installer.sh
 netbeans_install_dir: netbeans-8-0
 
-
+virtualbox_url: http://download.virtualbox.org/virtualbox/4.3.10/virtualbox-4.3_4.3.10-93012~Ubuntu~raring_amd64.deb
+virtualbox_deb_package: /tmp/virtualbox.deb

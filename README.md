@@ -26,3 +26,4 @@ These are the available packages:
 * ide
 * php
 * apache
+* virtualization

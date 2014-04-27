@@ -14,3 +14,4 @@
   - include: task/ide.yml tags=ide
   - include: task/php.yml tags=php
   - include: task/apache.yml tags=apache
+  - include: task/virtualization.yml
