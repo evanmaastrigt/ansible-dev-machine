@@ -1,0 +1,17 @@
+---
+- hosts: all
+  sudo: yes
+  
+  vars:
+  - username: edwin
+  - git_username: Edwinvan Maastrigt
+  - git_useremail: evanmaastrigt@gmail.com
+  - git_checkout_alias: co
+  - git_status_alias: st
+  - git_commit_alias: ci
+  - git_color: true
+
+  tasks:
+  - include: task/system.yml
+  - include: task/development.yml
+  

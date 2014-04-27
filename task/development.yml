@@ -1,0 +1,9 @@
+---
+# Development configuration
+
+- name: DEVELOPMENT | Installing Version Control Systems
+  sudo: yes
+  apt: pkg=git,meld state=installed
+  
+- name: DEVELOPMENT | Configuring GIT defaults
+  template: src=template/gitconfig dest=/home/{{ username }}/.gitconfig owner={{ username }} group={{ username }} mode=0644 backup=yes
