@@ -24,4 +24,5 @@ These are the available packages:
 * development
 * browser
 * ide
+* php
 * apache
