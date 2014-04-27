@@ -4,7 +4,7 @@
   
   vars:
   - username: edwin
-  - git_username: Edwinvan Maastrigt
+  - git_username: Edwin van Maastrigt
   - git_useremail: evanmaastrigt@gmail.com
   - git_checkout_alias: co
   - git_status_alias: st
@@ -12,6 +12,6 @@
   - git_color: true
 
   tasks:
-  - include: task/system.yml
-  - include: task/development.yml
+  - include: task/system.yml tags=system
+  - include: task/development.yml tags=development
   
