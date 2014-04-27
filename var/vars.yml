@@ -7,5 +7,9 @@ git_checkout_alias: co
 git_status_alias: st
 git_commit_alias: ci
 git_color: true
+ 
+netbeans_url: http://download.netbeans.org/netbeans/8.0/final/bundles/netbeans-8.0-php-linux.sh
+netbeans_installer_name: netbeans-8-0-installer.sh
+netbeans_install_dir: netbeans-8-0
 
 
