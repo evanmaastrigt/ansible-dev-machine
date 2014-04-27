@@ -14,4 +14,4 @@
   tasks:
   - include: task/system.yml tags=system
   - include: task/development.yml tags=development
-  
+  - include: task/browser.yml tags=browser

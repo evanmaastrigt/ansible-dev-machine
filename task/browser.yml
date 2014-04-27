@@ -1,0 +1,4 @@
+---
+- name: BROWSER | Install Chromium Browser
+  sudo: yes
+  apt: pkg=chromium-browser state=present
