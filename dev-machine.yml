@@ -3,13 +3,9 @@
   sudo: yes
   
   vars:
-  - username: edwin
-  - git_username: Edwin van Maastrigt
-  - git_useremail: evanmaastrigt@gmail.com
-  - git_checkout_alias: co
-  - git_status_alias: st
-  - git_commit_alias: ci
-  - git_color: true
+  
+  vars_files:
+  - var/vars.yml
 
   tasks:
   - include: task/system.yml tags=system
