@@ -1,0 +1,4 @@
+---
+- name: IDE | Install Geany
+  sudo: yes
+  apt: pkg=geany state=present

@@ -23,3 +23,4 @@ These are the available packages:
 * system
 * development
 * browser
+* ide
