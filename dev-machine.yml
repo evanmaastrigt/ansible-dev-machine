@@ -12,3 +12,5 @@
   - include: task/development.yml tags=development
   - include: task/browser.yml tags=browser
   - include: task/ide.yml tags=ide
+  - include: task/apache.yml tags=apache
+  

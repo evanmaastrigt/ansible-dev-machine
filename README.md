@@ -24,3 +24,4 @@ These are the available packages:
 * development
 * browser
 * ide
+* apache

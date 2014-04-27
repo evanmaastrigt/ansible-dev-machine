@@ -1,0 +1,18 @@
+---
+- name: APACHE | Install apache2
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - apache2
+
+- name: APACHE | Enable userdir module
+  sudo: yes
+  command: a2enmod userdir
+  
+- name: APACHE | Create pubic_html directory
+  file: path=/home/{{ username }}/public_html owner={{ username }} group={{ username }} mode=755 state=directory
+  
+- name: APACHE | Restart apache
+  sudo: yes
+  command: service apache2 restart
+  
