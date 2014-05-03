@@ -14,3 +14,6 @@ netbeans_install_dir: netbeans-8-0
 
 virtualbox_url: http://download.virtualbox.org/virtualbox/4.3.10/virtualbox-4.3_4.3.10-93012~Ubuntu~raring_amd64.deb
 virtualbox_deb_package: /tmp/virtualbox.deb
+
+skype_url: http://www.skype.com/go/getskype-linux-beta-ubuntu-64
+skype_deb_package: /tmp/skype-ubuntu-64.deb

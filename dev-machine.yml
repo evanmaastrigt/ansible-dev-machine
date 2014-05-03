@@ -16,3 +16,4 @@
   - include: task/apache.yml tags=apache
   - include: task/mysql.yml tags=mysql
   - include: task/virtualization.yml tags=virtualization
+  - include: task/skype.yml tags=skype

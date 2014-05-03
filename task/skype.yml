@@ -1,0 +1,21 @@
+---
+- name: SKYPE | Installing dependencies
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - libqt4-dbus
+  - libqt4-network
+  - libqt4-xml
+  - libasound2
+  
+- name: SKYPE | Fix any broken depedencies
+  sudo: yes
+  command: apt-get -f -y install
+   
+- name: SKYPE | Download Skype installer
+  get_url: dest={{ skype_deb_package }} url={{ skype_url }}
+  
+- name: SKYPE | Install Skype
+  sudo: yes
+  command: dpkg --skip-same-version -i {{ skype_deb_package }}
+  
