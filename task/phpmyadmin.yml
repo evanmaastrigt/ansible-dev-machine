@@ -1,0 +1,18 @@
+---
+- name: PHPMYADMIN | Setting up deb configuration
+  sudo: yes
+  shell: chdir=/ {{ item }}
+  with_items:
+  - echo "phpmyadmin phpmyadmin/database-type mysql" | debconf-set-selections
+  - echo "phpmyadmin phpmyadmin/mysql/app-pass root" | debconf-set-selections
+  - echo "phpmyadmin phpmyadmin/mysql/admin-pass root" | debconf-set-selections
+  - echo "phpmyadmin phpmyadmin/password-confirm root" | debconf-set-selections
+  - echo "phpmyadmin phpmyadmin/reconfigure-webserver apache2" | debconf-set-selections
+  - echo "phpmyadmin phpmyadmin/dbconfig-install true" | debconf-set-selections
+  
+- name: PHPMYADMIN | Installing phpmyadmin
+  apt: pkg=phpmyadmin state=latest
+  
+- name: PHPMYADMIN | Restarting apache
+  sudo: yes
+  command: service apache2 restart

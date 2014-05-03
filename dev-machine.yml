@@ -18,3 +18,4 @@
   - include: task/virtualization.yml tags=virtualization
   - include: task/skype.yml tags=skype
   - include: task/mysql-workbench.yml tags=mysql-workbench
+  - include: task/phpmyadmin.yml tags=phpmyadmin
