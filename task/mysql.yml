@@ -1,0 +1,15 @@
+---
+- name: MYSQL | Setting up debconfig
+  sudo: yes
+  shell: echo mysql-server-5.5 mysql-server/root_password root | debconf-set-selections  &&  echo mysql-server-5.5 mysql-server/root_password_again root | debconf-set-selections
+
+- name: MYSQL | Installing MySql server and utilities
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - mysql-server 
+  - php5-mysql
+
+- name: Restarting Mysql server
+  sudo: yes
+  service: name=mysql enabled=yes state=started
