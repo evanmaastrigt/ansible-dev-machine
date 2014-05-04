@@ -1,0 +1,10 @@
+---
+- name: Installing sqlite driver for PHP
+  apt: pkg=php5-sqlite state=latest
+  
+- name: Installing sqlite3
+  apt: pkg=sqlite3 state=latest
+  
+- name: Installing GUI frontend for sqlite3
+  apt: pkg=sqliteman state=latest
+  
