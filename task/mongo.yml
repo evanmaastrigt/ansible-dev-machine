@@ -1,0 +1,16 @@
+---
+- name: mongo | Import the MongoDB pubic PGP key
+  sudo: yes
+  command: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+  
+- name: mongo | Create a list file for MongoDb
+  sudo: yes
+  shell: echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+  
+- name: mongo | Update packages
+  sudo: yes
+  apt: update_cache=yes
+  
+- name: mongo | Install mongodb
+  sudo: yes
+  apt: pkg=mongodb-org state=latest
