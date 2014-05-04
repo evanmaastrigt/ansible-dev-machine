@@ -1,0 +1,9 @@
+---
+- name: node | Install nodejs
+  apt: pkg=nodejs state=latest
+  
+- name: node | Install npm
+  apt: pkg=npm state=latest
+  
+- name: node | Symlink /usr/bin/node to /usr/bin/nodejs
+  file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
