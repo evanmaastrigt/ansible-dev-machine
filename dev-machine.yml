@@ -21,5 +21,6 @@
   - include: task/phpmyadmin.yml tags=phpmyadmin
   - include: task/sqlite3.yml tags=sqlite3
   - include: task/mongo.yml tags=mongo
+  - include: task/sshfs.yml tags=sshfs
   - include: task/gimp.yml tags=gimp
   - include: task/calibre.yml tags=calibre

@@ -1,0 +1,7 @@
+---
+- name: sshfs | Install sshfs
+  sudo: yes
+  apt: pkg=sshfs state=latest
+  
+- name: sshfs | Add yourself to the fuse group
+  user: name={{ username }} groups=fuse append=yes
