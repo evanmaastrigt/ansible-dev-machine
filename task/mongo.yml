@@ -14,3 +14,6 @@
 - name: mongo | Install mongodb
   sudo: yes
   apt: pkg=mongodb-org state=latest
+  
+- name: mongo | Install driver for PHP
+  apt: pkg=php5-mongo state=latest
