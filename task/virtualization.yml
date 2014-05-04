@@ -1,15 +1,15 @@
 ---
-- name: VIRTUALIZATION | Download Virtualbox
+- name: virtualization | Download Virtualbox
   get_url: url={{ virtualbox_url }} dest={{ virtualbox_deb_package }}
   
-- name: VIRTUALIZATION | Fix any broken depedencies
+- name: virtualization | Fix any broken depedencies
   sudo: yes
   command: apt-get -f -y install
   
-- name: VIRTUALIZATION | Install Virtualbox
+- name: virtualization | Install Virtualbox
   sudo: yes
   command: dpkg --skip-same-version -i {{ virtualbox_deb_package }}
   
-- name: VIRTUALIZATION | Install Vagrant
+- name: virtualization | Install Vagrant
   sudo: yes
   apt: pkg=vagrant state=latest

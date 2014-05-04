@@ -1,15 +1,15 @@
 ---
-- name:  android | Checking Android ADT Bundle installation
+- name:  android | Check Android ADT Bundle installation
   sudo: no
   command: ls /home/{{ username }}/program
   register: adt_installed
   
-- name: android | Downloading Android ADT bundle
+- name: android | Download Android ADT bundle
   sudo: no
   get_url: url={{ android_adt_bundle_url }} dest=/tmp/adt_bundle.zip
   when: adt_installed.stdout.find('{{ android_adt_bundle_install_dir }}') == -1
   
-- name: Install Android ADT bundle
+- name: android | Install Android ADT bundle
   sudo: no
   command: unzip /tmp/adt_bundle.zip -d /home/{{ username }}/program/
   when: adt_installed.stdout.find('{{ android_adt_bundle_install_dir }}') == -1

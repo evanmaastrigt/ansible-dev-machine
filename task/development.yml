@@ -1,26 +1,26 @@
 ---
 # Development configuration
 
-- name: DEVELOPMENT | Installing Version Control Systems
+- name: development | Install Version Control Systems
   sudo: yes
   apt: pkg=git,meld state=installed
   
-- name: DEVELOPMENT | Configuring GIT defaults
+- name: development | Configure GIT defaults
   template: src=template/gitconfig dest=/home/{{ username }}/.gitconfig owner={{ username }} group={{ username }} mode=0644 backup=yes
   
-- name: DEVELOPMENT | Installing PIP
+- name: development | Install PIP
   sudo: yes
   apt: pkg=python-pip state=installed
   
-- name: DEVELOPMENT | Enabling Oracle JDK 7 PPA
+- name: development | Enable Oracle JDK 7 PPA
   sudo: yes
   apt_repository: repo=ppa:webupd8team/java state=present
 
-- name: DEVELOPMENT | Unattended installation
+- name: development | Configure debconf for unattended installation
   sudo: yes
   shell: echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 
-- name: DEVELOPMENT | Installing Oracle JDK 7
+- name: development | Install Oracle JDK 7
   sudo: yes
   apt: pkg=oracle-java7-installer state=latest update_cache=yes
 

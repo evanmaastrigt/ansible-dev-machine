@@ -1,15 +1,15 @@
 ---
-- name: SYSTEM | Updating all packages
+- name: system | Update all packages
   sudo: yes
   apt: update_cache=yes
 
-- name: SYSTEM | Installing basic system packages
+- name: system | Install basic system packages
   sudo: yes
   apt: pkg=curl,aptitude,python-apt state=latest
   
-- name: SYSTEM | Installing Debian Configuration Utilities
+- name: system | Install Debian Configuration Utilities
   sudo: yes
   apt: pkg=debconf-utils
 
-- name: SYSTEM | Creating program folder inside user home for IDEs and frameworks
+- name: system | Create program folder inside user home for IDEs and frameworks
   file: path=/home/{{ username }}/program owner={{ username }} group={{ username }} state=directory

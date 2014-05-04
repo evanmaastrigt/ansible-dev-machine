@@ -1,5 +1,5 @@
 ---
-- name: PHPMYADMIN | Setting up deb configuration
+- name: phpmyadmin | Set up deb configuration for unattended install
   sudo: yes
   shell: chdir=/ {{ item }}
   with_items:
@@ -10,9 +10,9 @@
   - echo "phpmyadmin phpmyadmin/reconfigure-webserver apache2" | debconf-set-selections
   - echo "phpmyadmin phpmyadmin/dbconfig-install true" | debconf-set-selections
   
-- name: PHPMYADMIN | Installing phpmyadmin
+- name: phpmyadmin | Install phpmyadmin
   apt: pkg=phpmyadmin state=latest
   
-- name: PHPMYADMIN | Restarting apache
+- name: phpmyadmin | Restart apache
   sudo: yes
   command: service apache2 restart

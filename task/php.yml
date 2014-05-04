@@ -1,5 +1,5 @@
 ---
-- name: PHP | Install php
+- name: php | Install php
   sudo: yes
   apt: pkg={{ item }} state=latest
   with_items:
@@ -9,9 +9,9 @@
   - php5-dev
   - php5-mcrypt
   
-- name: PHP | Install Composer
+- name: php | Install Composer
   shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/
   
-- name: PHP | Symlink Composer
+- name: php | Symlink Composer
   file: path=/usr/local/bin/composer src=/usr/local/bin/composer.phar state=link
     

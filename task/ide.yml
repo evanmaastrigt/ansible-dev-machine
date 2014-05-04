@@ -1,14 +1,14 @@
 ---
-- name: IDE | Install Geany
+- name: ide | Install Geany
   sudo: yes
   apt: pkg=geany state=present
   
-- name: IDE | Download Netbeans installer
+- name: ide | Download Netbeans installer
   get_url: dest=/home/{{ username }}/program/{{ netbeans_installer_name }} url={{ netbeans_url }}
   
-- name: IDE | Change permissions on installer
+- name: ide | Change permissions on installer
   sudo: yes
   file: path=/home/{{ username }}/program/{{ netbeans_installer_name }} owner={{ username }} group={{ username }} mode=0755 state=file
   
-- name: IDE | Creating netbeans directory
+- name: ide | Creating netbeans directory
   file: path=/home/{{ username }}/program/{{ netbeans_install_dir }} owner={{ username }} group={{ username }} mode=0755 state=directory
