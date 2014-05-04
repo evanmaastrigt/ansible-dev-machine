@@ -17,3 +17,6 @@ virtualbox_deb_package: /tmp/virtualbox.deb
 
 skype_url: http://www.skype.com/go/getskype-linux-beta-ubuntu-64
 skype_deb_package: /tmp/skype-ubuntu-64.deb
+
+android_adt_bundle_url: http://dl.google.com/android/adt/22.6.2/adt-bundle-linux-x86_64-20140321.zip
+android_adt_bundle_install_dir: adt-bundle-linux-x86_64-20140321
