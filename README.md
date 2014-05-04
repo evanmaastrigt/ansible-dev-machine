@@ -16,7 +16,7 @@ Starting orchestration
 
 If you want to select only some developer tools, you can select them with this command:
 
-	$ ansible-playbook dev-machine.yml -i inventory.yml --connection=local -K --tags "`<some packages>`"
+	$ ansible-playbook dev-machine.yml -i inventory.yml --connection=local -K --tags=tag1,tag2
 
 These are the available packages:
 
@@ -26,4 +26,14 @@ These are the available packages:
 * ide
 * php
 * apache
+* mysql
 * virtualization
+* mysql-workbench
+* phpmyadmin
+* sqlite3
+* mongo
+* sshfs
+* gimp
+* calibre
+* skype
+* android
