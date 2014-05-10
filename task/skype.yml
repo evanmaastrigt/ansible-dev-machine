@@ -19,3 +19,12 @@
   sudo: yes
   command: dpkg --skip-same-version -i {{ skype_deb_package }}
   
+- name: skype | Add Skype Wrapper PPA
+  sudo: yes
+  apt_repository: repo=ppa:skype-wrapper/ppa state=present
+  
+- name: skype | Install Skype wrapper
+  apt: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+  - skype-wrapper
+  - python-skype
