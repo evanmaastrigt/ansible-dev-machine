@@ -5,11 +5,13 @@
 
 - name: system | Install basic system packages
   sudo: yes
-  apt: pkg=curl,aptitude,python-apt state=latest
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - curl
+  - aptitude
+  - python-apt 
+  - gksu
+  - debconf-utils
   
-- name: system | Install Debian Configuration Utilities
-  sudo: yes
-  apt: pkg=debconf-utils
-
 - name: system | Create program folder inside user home for IDEs and frameworks
   file: path=/home/{{ username }}/program owner={{ username }} group={{ username }} state=directory
