@@ -1,0 +1,27 @@
+127.0.0.1	localhost
+127.0.0.1	localdev
+127.0.0.1       dev.simgroep.nl
+127.0.0.1 	region
+127.0.0.1       rdp
+127.0.0.1       push
+127.0.0.1	broker
+127.0.0.1	agenda
+127.0.0.1	bri.dev
+
+172.31.0.42     satis.simgroep.nl
+172.31.0.42     svn.simgroep.nl
+
+# added by edwin
+172.31.0.17 cs
+10.39.7.10 dev01
+10.39.3.10 test01
+10.39.5.10 acc01
+
+192.168.2.222 git.simform.nl
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

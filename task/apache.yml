@@ -5,12 +5,28 @@
   with_items:
   - apache2
 
-- name: apache | Enable userdir module
+- name: apache | Disable userdir module
   sudo: yes
-  command: a2enmod userdir
+  command: a2dismod userdir
   
-- name: apache | Create pubic_html directory
-  file: path=/home/{{ username }}/public_html owner={{ username }} group={{ username }} mode=755 state=directory
+- name: apache | Ensure there is no pubic_html directory
+  file: path=/home/{{ username }}/public_html state=absent
+  
+- name: apache | Enable vhost_alias module
+  sudo: yes
+  command: a2enmod vhost_alias
+  
+- name: pache | Copy apache config file
+  sudo: yes
+  copy: src=file/000-default.conf dest=/etc/apache2/sites-enabled/000-default.conf force=yes
+  
+- name: apache | Copy hosts file
+  sudo: yes
+  copy: src=file/hosts dest=/etc/hosts
+  
+- name: apache | Create Host directory
+  sudo: yes
+  file: path=/home/{{ username }}/Hosts owner={{ username }} group={{ username }} mode=755 state=directory
   
 - name: apache | Restart apache
   sudo: yes
