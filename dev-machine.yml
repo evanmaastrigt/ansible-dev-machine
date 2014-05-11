@@ -27,3 +27,4 @@
   - include: task/android.yml tags=android
   - include: task/node.yml tags=node
 #  - include: task/mount-nietzsche.yml tags=mount-nietzsche
+  - include: task/hplip.yml tags=hplip

@@ -1,0 +1,72 @@
+---
+- name: hplip | Install dependencies
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+  - avahi-utils 
+  - libcups2 
+  - cups 
+  - libcups2-dev 
+  - cups-bsd 
+  - cups-client 
+  - libcupsimage2-dev 
+  - libdbus-1-dev 
+  - build-essential 
+  - ghostscript 
+  - openssl 
+  - libjpeg-dev 
+  - libsnmp-dev 
+  - libtool 
+  - libusb-1.0-0-dev 
+  - wget 
+  - python-imaging 
+  - policykit-1 
+  - policykit-1-gnome 
+  - gtk2-engines-pixbuf 
+  - python-qt4 
+  - python-qt4-dbus 
+  - python-dbus 
+  - python-gobject 
+  - python-dev 
+  - python-notify2 
+  - python 
+  - python-reportlab 
+  - libsane 
+  - libsane-dev 
+  - sane-utils 
+  - xsane
+
+- name: hplip | Create directory for hplip
+  sudo: no
+  file: path=/home/{{ username }}/bin owner={{ username }} group={{ username }} mode=0755 state=directory
+  
+- name: hplip | Downoad tarball
+  sudo: no
+  get_url: url={{ hplip_tarball_url }} dest=/home/{{ username }}/bin
+  
+- name: hplip | Unpack tarball
+  sudo: no
+  command: tar -xvzf {{ hplip_dirname }}.tar.gz chdir=/home/{{ username }}/bin
+  
+- name: hplip | Configure hiplip
+  sudo: no
+  command: >
+    ./configure --with-hpppddir=/usr/share/ppd/HP --libdir=/usr/lib64 --prefix=/usr --enable-udev-acl-rules 
+    --enable-qt4 --disable-libusb01_build --enable-doc-build --disable-cups-ppd-install --disable-foomatic-drv-install 
+    --disable-foomatic-ppd-install --disable-hpijs-install --disable-udev_sysfs_rules --disable-policykit 
+    --enable-cups-drv-install --enable-hpcups-install --enable-network-build --enable-dbus-build --enable-scan-build 
+    --enable-fax-build chdir=/home/{{ username }}/bin/{{ hplip_dirname }}
+    
+- name: hplip | Run Make
+  sudo: no
+  command: make chdir=/home/{{ username }}/bin/{{ hplip_dirname }}
+    
+- name: hplip | Run Make Install
+  sudo: yes
+  command: make install chdir=/home/{{ username }}/bin/{{ hplip_dirname }}
+    
+- name: hplip | Add yourself to the lp group
+  user: name={{ username }} groups=lp append=yes
+
+
+  

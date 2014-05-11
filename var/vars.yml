@@ -22,3 +22,6 @@ pidgin_skype_deb_package: /tmp/skype4pidgin.deb
 
 android_adt_bundle_url: http://dl.google.com/android/adt/22.6.2/adt-bundle-linux-x86_64-20140321.zip
 android_adt_bundle_install_dir: adt-bundle-linux-x86_64-20140321
+
+hplip_tarball_url: http://prdownloads.sourceforge.net/hplip/hplip-3.14.4.tar.gz
+hplip_dirname: hplip-3.14.4
