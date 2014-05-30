@@ -12,6 +12,7 @@
   - python-apt 
   - gksu
   - debconf-utils
+  - compizconfig-settings-manager
   
 - name: system | Create program folder inside user home for IDEs and frameworks
   file: path=/home/{{ username }}/program owner={{ username }} group={{ username }} state=directory
